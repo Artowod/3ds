@@ -5,13 +5,8 @@ import moment from "moment";
 import visa from "assets/icons/visa.png";
 import mastercard from "assets/icons/mastercard.png";
 
-export interface IMenuData {
-  id: number;
-  name: string;
-  route?: string;
-}
 export const LandingPage = () => {
-  const bank = { name: "MonoBank" };
+  const bank = { name: "Privat" };
   const transactionData = {
     merchant: "Coca-Cola ltd.",
     amount: 500,
@@ -58,7 +53,9 @@ export const LandingPage = () => {
             height={80}
           />
         </div>
-        <div className={s.headerTitle}>{bank?.name || "undefined bank"}</div>
+        <div className={s.headerTitle}>
+          Bank: {bank?.name || "undefined bank"}
+        </div>
       </div>
       <h3>
         {`Please submit your Verified by ${
@@ -68,7 +65,7 @@ export const LandingPage = () => {
 
       <ul>
         <li className={s.dataLine}>
-          <span>Merchant:</span>
+          <span>Client:</span>
           <span>{transactionData.merchant}</span>
         </li>
         <li className={s.dataLine}>

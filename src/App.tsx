@@ -27,7 +27,7 @@
 
 import "./App.css";
 
-import { LandingPage } from "pages";
+import { DeclinePage, LandingPage, SuccessPage } from "pages";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
@@ -40,6 +40,8 @@ function App() {
           <Suspense fallback={<span>Loading...</span>}>
             <Routes>
               <Route path={"/"} element={<LandingPage />} />
+              <Route path={"/success"} element={<SuccessPage />} />
+              <Route path={"/decline"} element={<DeclinePage />} />
             </Routes>
           </Suspense>
       </div>
